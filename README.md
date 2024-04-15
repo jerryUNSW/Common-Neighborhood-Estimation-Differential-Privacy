@@ -2,19 +2,19 @@
 
 ## Overview
 
-ldp-nb is a C++ project focused on butterfly counting in bipartite graphs with edge local differential privacy.
+ldp-nb is a C++ project focused on common neighborhood estimation in bipartite graphs with edge local differential privacy.
 
 ## Project Structure
 
 The project includes the following files and directories:
 
-- `ldp-nb.cpp`: Implementation of the butterfly counting algorithms. 
+- `ldp-nb.cpp`: Implementation of the common neighborhood estimation algorithms. 
 - `bigraph.cpp`: Implementation of bipartite graph-related functionality.
 - `utility.cpp`: Utility functions used in the project.
 - `main.cpp`: Main program entry point.
 - `bigraph.h`: Header file for bipartite graph-related functions.
 - `utility.h`: Header file for utility functions.
-- `ldp-nb.h`: Header file for the butterfly counting algorithms. 
+- `ldp-nb.h`: Header file for the common neighborhood estimation algorithms. 
 - `makefile`: Build instructions for compiling and linking the project.
 - `mt19937ar.h`: Header file for the Mersenne Twister random number generator.
 
@@ -31,8 +31,12 @@ make clean && make
 To run the ldp-nb program, use the following command:
 
 ```bash
-./ldp-nb <epsilon> <data_directory> <num_iterations> <algorithm_switch> <motif_type>
+./ldp-nb <epsilon> <data_directory> <num_iterations> <balancing_factor> <sample_size>
 ```
+
+To compare the performances of all algorithms, set <num_iterations> to 3. Naive and OneR will be run in the first iteration, followed by MultiR-SS and MultiR-DS. 
+
+<balancing_factor> corresponds to kappa, which is used to quantify the degree of imbalance between two vertex degrees in a sampled of vertex pairs.
 
 ## Data Format for Bipartite Graphs
 
