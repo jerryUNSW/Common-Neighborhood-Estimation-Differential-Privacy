@@ -61,12 +61,12 @@ Edges Count: The total number of edges
 
 ## Usage
 
-1. Run the naive algorithm for 10 rounds with a privacy budget epsilon = 2, on the dataset unicode:  
+<!-- 1. Run the naive algorithm for 10 rounds with a privacy budget epsilon = 2, on the dataset unicode:  
 ```bash
 ./ldp-nb 2 unicode 10 1 btf 
-```
+``` -->
 
-2. Run the Multiple-round algorithm for 10 rounds with a privacy budget epsilon = 2, on the dataset unicode:  
+1. Run all algorithms (Naive, OneR, MultiR-SS, and MultiR-DS) for 100 pairs of vertices on the same layer on the bipartite graph with a privacy budget epsilon = 2, on the dataset unicode:  
 ```bash
-./ldp-nb 2 unicode 10 2 btf 
+./ldp-nb 2 unicode 4 0 100 
 ```
